@@ -25,3 +25,10 @@ set ignorecase " To ignre case when searching
 set hlsearch " To hightlight matches when searching
 
 let g:pymode_python = 'python3'
+
+set tabstop=4   " number of visual spaces per TAB
+
+set softtabstop=4   " number of spaces in tab when editing
+   
+set expandtab    " tabs are spaces
+                                              
