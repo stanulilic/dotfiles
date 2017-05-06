@@ -127,3 +127,10 @@ set -o vi
 
 # use python3 as default
 alias python="python3"
+
+# Enable gnome to support tap-to-click
+synclient TapButton1=1 TapButton2=3 TapButton3=2
+
+# Enable solaried
+eval `dircolors ~/.dir_colors/dircolors`
+

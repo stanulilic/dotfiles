@@ -1,0 +1,106 @@
+-- vim: ts=4 sw=4 noet ai cindent syntax=lua
+--[[
+Conky, a system monitor, based on torsmo
+
+Any original torsmo code is licensed under the BSD license
+
+All code written since the fork of torsmo is licensed under the GPL
+
+Please see COPYING for details
+
+Copyright (c) 2004, Hannu Saransaari and Lauri Hakkarainen
+Copyright (c) 2005-2012 Brenden Matthews, Philip Kovacs, et. al. (see AUTHORS)
+All rights reserved.
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+]]
+
+conky.config = {
+	color1 = 'bc9574',
+	color2 = 'AFCED2',
+	color3 = '7C7062',
+	color4 = '99AEB1',
+	color5 = '7E5630',
+	default_color = '7FFF00',
+	default_outline_color = 'Dark Cyan',
+	default_shade_color = 'Dark Cyan',
+    alignment = 'top_right',
+    background = true,
+    border_width = 1,
+    cpu_avg_samples = 2,
+	double_buffer = true,
+    draw_borders = false,
+    draw_graph_borders = true,
+    draw_outline = false,
+    draw_shades = false,
+    font = 'DejaVu Sans Mono:size=12',
+    gap_x = 25,
+    gap_y = 50,
+    minimum_height = 10,
+	minimum_width = 330,
+	maximum_width = 330,
+    net_avg_samples = 2,
+    no_buffers = true,
+    out_to_console = false,
+    out_to_stderr = false,
+    extra_newline = false,
+    own_window = true,
+    own_window_type = 'override',
+	own_window_transparent = true,
+	own_window_argb_visual = true,
+	own_window_color = '000000',
+	own_window_argb_value = 175,
+    own_window_class = 'Conky',
+	own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',
+    stippled_borders = 2,
+    update_interval = 2.0,
+    uppercase = false,
+    use_spacer = 'right',
+    use_xft = true,
+    show_graph_scale = false,
+    show_graph_range = false,
+	xftalpha = 0.8,
+}
+
+conky.text = [[
+$color1$nodename     ${alignc}$sysname $kernel ${alignr}$color1${time %l:%M:%p}
+$hr
+${color1}Uptime:$color3 $uptime ${color1} Load:$color3 $loadavg
+
+${color1}CPU0:${color4}${cpu cpu0}% ${cpubar cpu0 5,85}${alignr 10}${color2}$alignr${color1}${cpugraph cpu0 32,120 104E8B FF7F50 -t -l}
+${color1}CPU1:${color4}${cpu cpu1}% ${cpubar cpu1 5,85}${alignr 10}${color2}$alignr${color1}${cpugraph cpu1 32,120 104E8B FF7F50 -t -l}
+# ${color1}CPU2:${color4}${cpu cpu2}% ${cpubar cpu2 5,85}${alignr 10}${color2}$alignr${color1}${cpugraph cpu2 32,120 104E8B FF7F50 -t -l}
+# ${color1}CPU3:${color4}${cpu cpu3}% ${cpubar cpu3 5,85}${alignr 10}${color2}$alignr${color1}${cpugraph cpu3 32,120 104E8B FF7F50 -t -l}
+# ${color1}CPU4:${color4}${cpu cpu4}% ${cpubar cpu4 5,85}${alignr 10}${color2}$alignr${color1}${cpugraph cpu4 32,120 104E8B FF7F50 -t -l}
+# ${color1}CPU5:${color4}${cpu cpu5}% ${cpubar cpu5 5,85}${alignr 10}${color2}$alignr${color1}${cpugraph cpu5 32,120 104E8B FF7F50 -t -l}
+# ${color1}CPU6:${color4}${cpu cpu6}% ${cpubar cpu6 5,85}${alignr 10}${color2}$alignr${color1}${cpugraph cpu6 32,120 104E8B FF7F50 -t -l}
+# ${color1}CPU7:${color4}${cpu cpu7}% ${cpubar cpu7 5,85}${alignr 10}${color2}$alignr${color1}${cpugraph cpu7 32,120 104E8B FF7F50 -t -l}
+
+${color1}Frequency:$color3 $freq_g GHz
+${color1}RAM Usage:$color3 $mem/$memmax - $memperc% ${membar 4}
+${color1}Swap Usage:$color3 $swap/$swapmax - $swapperc% ${swapbar 4}
+$hr
+${color1}Disk I/O: $color3${diskio} $alignr${color1}${diskiograph 32,155 104E8B FF7F50 -t 750}
+${color1}File systems:
+ ${color1}/      ${color3}${fs_used /} / ${fs_size /}${alignr}${fs_bar 5,120 /}
+#  ${color1}/home  ${color3}${fs_used /home} / ${fs_size /home}${alignr}${fs_bar 5,120 /home}
+${color1}Networking:
+Up:$color3 ${upspeed enx582c80139263} ${color1} - Down:$color3 ${downspeed enx582c80139263}
+${color3}$hr
+${color1}Name              PID    CPU%   MEM%
+${color1}${top name 1} ${color2}${top pid 1} ${top cpu 1} ${top mem 1}
+${color1}${top name 2} ${color2}${top pid 2} ${top cpu 2} ${top mem 2}
+${color1}${top name 3} ${color2}${top pid 3} ${top cpu 3} ${top mem 3}
+${color1}${top name 4} ${color2}${top pid 4} ${top cpu 4} ${top mem 4}
+${color1}${top name 5} ${color2}${top pid 5} ${top cpu 5} ${top mem 5}
+]]
