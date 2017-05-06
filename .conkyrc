@@ -26,9 +26,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 ]]
 
 conky.config = {
-	color1 = 'bc9574',
+	color1 = 'eee8d5',
 	color2 = 'AFCED2',
-	color3 = '7C7062',
+	color3 = '268bd2',
 	color4 = '99AEB1',
 	color5 = '7E5630',
 	default_color = '7FFF00',
