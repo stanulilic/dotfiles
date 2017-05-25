@@ -32,3 +32,7 @@ set softtabstop=4   " number of spaces in tab when editing
    
 set expandtab    " tabs are spaces
                                               
+set nofoldenable  " disable folding
+
+autocmd FileType html setlocal shiftwidth=2 tabstop=2 " fix html indentation
+
