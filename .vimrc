@@ -10,6 +10,10 @@ call plug#begin()
   Plug 'junegunn/seoul256.vim'
   Plug 'davidhalter/jedi-vim'
   Plug 'klen/python-mode'
+  Plug 'mattn/emmet-vim'
+  Plug 'tpope/vim-surround'
+  Plug 'scrooloose/nerdtree'
+  Plug 'Valloric/MatchTagAlways'
 call plug#end()
 
 syntax on " Enable Syntax Hightlighting
