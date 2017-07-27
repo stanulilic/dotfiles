@@ -40,3 +40,9 @@ set nofoldenable  " disable folding
 
 autocmd FileType html setlocal shiftwidth=2 tabstop=2 " fix html indentation
 
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree     | endif "  Allows NerdTree to open if vim is opened without a file
+map <C-n> :NERDTreeToggle<CR>   " allows opening of nerdtree with sh    ortcut
+imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>") " use tab wi    th emmet
+set wildignore=*.o,*.obj,*.bak,*.exe,*.py[co],*.swp,*~,*.pyc,.svn "     files to ignore
+
