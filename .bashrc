@@ -135,3 +135,22 @@ synclient TapButton1=1 TapButton2=3 TapButton3=2
 # Enable solaried
 eval `dircolors ~/.dir_colors/dircolors`
 
+# Virtualenvwrapper requirements
+export WORKON_HOME=$HOME/.virtualenvs
+export PROJECT_HOME=$HOME/Devel
+source /usr/local/bin/virtualenvwrapper.sh
+source /usr/share/virtualenvwrapper/virtualenvwrapper.sh
+
+# pip bash completion start
+_pip_completion()
+{
+    COMPREPLY=( $( COMP_WORDS="${COMP_WORDS[*]}" \
+    151                    COMP_CWORD=$COMP_CWORD \
+    152                    PIP_AUTO_COMPLETE=1 $1 ) )
+}
+complete -o default -F _pip_completion pip
+# pip bash completion end
+
+export WORKON_HOME=/home/stanley/.virtualenvs
+export PIP_VIRTUALENV_BASE=/home/stanley/.virtualenvs
+
