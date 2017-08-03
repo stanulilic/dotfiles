@@ -93,6 +93,7 @@ alias la='ls -A'
 alias l='ls -CF'
 alias general='cd /media/stanley/general'
 alias pip='pip3'
+alias mux='tmuxinator'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
@@ -153,4 +154,7 @@ complete -o default -F _pip_completion pip
 
 export WORKON_HOME=/home/stanley/.virtualenvs
 export PIP_VIRTUALENV_BASE=/home/stanley/.virtualenvs
+
+export EDITOR=vim
+
 
