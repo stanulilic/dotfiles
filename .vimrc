@@ -14,6 +14,7 @@ call plug#begin()
   Plug 'tpope/vim-surround'
   Plug 'scrooloose/nerdtree'
   Plug 'Valloric/MatchTagAlways'
+  Plug 'othree/html5.vim'
 call plug#end()
 
 syntax on " Enable Syntax Hightlighting
