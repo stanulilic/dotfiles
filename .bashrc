@@ -16,8 +16,8 @@ HISTCONTROL=ignoreboth
 shopt -s histappend
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=1000
-HISTFILESIZE=2000
+HISTSIZE=7000
+HISTFILESIZE=7000
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -92,8 +92,11 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 alias general='cd /media/stanley/general'
-alias pip='pip3'
+alias youtude-audio='youtube-dl --extract-audio --audio-format mp3 '
+alias pywork='cd /home/stanley/Documents/playground/python_work'
+alias pip='python3.6 -m pip'
 alias mux='tmuxinator'
+alias pycharm='cd /opt/pycharm-2018.1.1/bin && ./pycharm.sh'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
@@ -130,11 +133,15 @@ set -o vi
 # use python3 as default
 alias python="python3"
 
+# open firefoxdev from commandline
+alias firefoxdev="cd /opt/firefox_dev/ && ./firefox"
+
 # Enable gnome to support tap-to-click
 synclient TapButton1=1 TapButton2=3 TapButton3=2
 
 # Enable solaried
 eval `dircolors ~/.dir_colors/dircolors`
+
 
 # Virtualenvwrapper requirements
 export WORKON_HOME=$HOME/.virtualenvs
@@ -146,15 +153,15 @@ source /usr/share/virtualenvwrapper/virtualenvwrapper.sh
 _pip_completion()
 {
     COMPREPLY=( $( COMP_WORDS="${COMP_WORDS[*]}" \
-    151                    COMP_CWORD=$COMP_CWORD \
-    152                    PIP_AUTO_COMPLETE=1 $1 ) )
+                   COMP_CWORD=$COMP_CWORD \
+                   PIP_AUTO_COMPLETE=1 $1 ) )
 }
 complete -o default -F _pip_completion pip
 # pip bash completion end
 
 export WORKON_HOME=/home/stanley/.virtualenvs
-export PIP_VIRTUALENV_BASE=/home/stanley/.virtualenvs
+export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3.6
+export PROJECT_HOME=$HOME/Devel
+source /usr/local/bin/virtualenvwrapper.sh
 
 export EDITOR=vim
-
-
